@@ -1,6 +1,6 @@
 # Customer Churn Risk Explorer
 
-An end-to-end data science portfolio project that explores customer churn patterns, compares two classification approaches, evaluates risk scores on a held-out test set, and serves predictions through a Streamlit dashboard.
+An end-to-end data science portfolio project that explores customer churn patterns, compares baseline classifiers with a stacking ensemble, evaluates risk scores on a held-out test set, and serves predictions through a Streamlit dashboard.
 
 > **Use responsibly:** this is a learning/demo project built on a sample dataset. A score is a prioritization signal, not certainty or a causal explanation. It should not be used for real customer decisions without validation, monitoring, and review of fairness and business impact.
 
