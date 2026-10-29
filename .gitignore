@@ -1,0 +1,23 @@
+# Python environments and caches
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local data: download separately and follow the source's terms
+data/*.csv
+data/raw/
+
+# Keep the reproducible demo artifact; ignore obsolete training outputs
+/churn_stacking_model.pkl
+/feature_scaler.pkl
+/catboost_info/
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+\n

@@ -1,0 +1,202 @@
+{
+  "project_title": "Customer Churn Risk Explorer",
+  "model_name": "XGBoost + CatBoost + LightGBM stack",
+  "decision_threshold": 0.3053985442541254,
+  "threshold_selection": "F1-maximizing threshold selected from 3-fold out-of-fold predictions on the training split.",
+  "test_metrics": {
+    "threshold": 0.3053985442541254,
+    "precision": 0.536178107606679,
+    "recall": 0.7727272727272727,
+    "f1": 0.6330777656078861,
+    "roc_auc": 0.8456573406701284,
+    "pr_auc": 0.6636759042868189,
+    "confusion_matrix": [
+      [
+        785,
+        250
+      ],
+      [
+        85,
+        289
+      ]
+    ],
+    "support": 1409
+  },
+  "cross_validation_comparison": [
+    {
+      "name": "Logistic regression",
+      "oof_f1_at_0_5": 0.6302676914921813,
+      "oof_f1_at_selected_threshold": 0.6402943882244709,
+      "selected_threshold": 0.6186858996629925
+    },
+    {
+      "name": "Random forest",
+      "oof_f1_at_0_5": 0.6295620437956204,
+      "oof_f1_at_selected_threshold": 0.6386602327561737,
+      "selected_threshold": 0.4475897317508847
+    },
+    {
+      "name": "XGBoost + CatBoost + LightGBM stack",
+      "oof_f1_at_0_5": 0.5947521865889213,
+      "oof_f1_at_selected_threshold": 0.6419479800774764,
+      "selected_threshold": 0.3053985442541254
+    }
+  ],
+  "dataset": {
+    "rows": 7043,
+    "churn_rate": 0.2653698707936959,
+    "positive_label": "Churn = Yes",
+    "train_rows": 5634,
+    "test_rows": 1409,
+    "split": "80/20 stratified train/test split; random_state=42"
+  },
+  "profiles": {
+    "Contract": [
+      {
+        "category": "Month-to-month",
+        "churn_rate": 0.4270967741935484,
+        "customers": 3875
+      },
+      {
+        "category": "One year",
+        "churn_rate": 0.11269517990495587,
+        "customers": 1473
+      },
+      {
+        "category": "Two year",
+        "churn_rate": 0.02831858407079646,
+        "customers": 1695
+      }
+    ],
+    "InternetService": [
+      {
+        "category": "DSL",
+        "churn_rate": 0.1895910780669145,
+        "customers": 2421
+      },
+      {
+        "category": "Fiber optic",
+        "churn_rate": 0.4189276485788114,
+        "customers": 3096
+      },
+      {
+        "category": "No",
+        "churn_rate": 0.07404980340760157,
+        "customers": 1526
+      }
+    ],
+    "PaymentMethod": [
+      {
+        "category": "Bank transfer (automatic)",
+        "churn_rate": 0.16709844559585493,
+        "customers": 1544
+      },
+      {
+        "category": "Credit card (automatic)",
+        "churn_rate": 0.15243101182654403,
+        "customers": 1522
+      },
+      {
+        "category": "Electronic check",
+        "churn_rate": 0.4528541226215645,
+        "customers": 2365
+      },
+      {
+        "category": "Mailed check",
+        "churn_rate": 0.19106699751861042,
+        "customers": 1612
+      }
+    ],
+    "TenureGroup": [
+      {
+        "category": "0\u201312",
+        "churn_rate": 0.47438243366880145,
+        "customers": 2186
+      },
+      {
+        "category": "13\u201324",
+        "churn_rate": 0.287109375,
+        "customers": 1024
+      },
+      {
+        "category": "25\u201348",
+        "churn_rate": 0.2038895859473024,
+        "customers": 1594
+      },
+      {
+        "category": "49\u201372",
+        "churn_rate": 0.09513175524787852,
+        "customers": 2239
+      }
+    ]
+  },
+  "top_model_factors": [
+    {
+      "feature": "categorical__Contract_Month-to-month",
+      "effect": "mean tree importance (direction not shown)",
+      "magnitude": 0.13456193189640575
+    },
+    {
+      "feature": "numeric__tenure",
+      "effect": "mean tree importance (direction not shown)",
+      "magnitude": 0.0806189149582396
+    },
+    {
+      "feature": "numeric__MonthlyCharges",
+      "effect": "mean tree importance (direction not shown)",
+      "magnitude": 0.07759137142522086
+    },
+    {
+      "feature": "numeric__TotalCharges",
+      "effect": "mean tree importance (direction not shown)",
+      "magnitude": 0.07326477305007816
+    },
+    {
+      "feature": "numeric__AvgMonthlySpend",
+      "effect": "mean tree importance (direction not shown)",
+      "magnitude": 0.060130956531075384
+    },
+    {
+      "feature": "categorical__Contract_Two year",
+      "effect": "mean tree importance (direction not shown)",
+      "magnitude": 0.04378008342418114
+    },
+    {
+      "feature": "categorical__OnlineSecurity_No",
+      "effect": "mean tree importance (direction not shown)",
+      "magnitude": 0.04105874633058978
+    },
+    {
+      "feature": "numeric__TenureYears",
+      "effect": "mean tree importance (direction not shown)",
+      "magnitude": 0.03107075167401334
+    },
+    {
+      "feature": "categorical__TechSupport_No",
+      "effect": "mean tree importance (direction not shown)",
+      "magnitude": 0.028144108553956437
+    },
+    {
+      "feature": "categorical__InternetService_Fiber optic",
+      "effect": "mean tree importance (direction not shown)",
+      "magnitude": 0.026797086308951085
+    },
+    {
+      "feature": "numeric__Risk_SuperCombo",
+      "effect": "mean tree importance (direction not shown)",
+      "magnitude": 0.024778285090802484
+    },
+    {
+      "feature": "categorical__Contract_One year",
+      "effect": "mean tree importance (direction not shown)",
+      "magnitude": 0.024318515484211517
+    }
+  ],
+  "software_versions": {
+    "python": "3.14.7",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit_learn": "1.9.1"
+  },
+  "generated_at_utc": "2026-10-28T17:49:06.991506+00:00"
+}
